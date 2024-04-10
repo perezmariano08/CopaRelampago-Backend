@@ -4,8 +4,10 @@ const mysql = require("mysql")
 const cors = require("cors")
 
 app.use(cors({
-    origin: 'https://cr-sistema.vercel.app/',
+    origin: 'https://cr-sistema.vercel.app',
     // Ajusta las opciones según sea necesario
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json())
 
