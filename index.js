@@ -3,7 +3,10 @@ const app = express()
 const mysql = require("mysql")
 const cors = require("cors")
 
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:5173',
+    // Ajusta las opciones según sea necesario
+}));
 app.use(express.json())
 
 const port = process.env.PORT || 3001
