@@ -4,7 +4,7 @@ const mysql = require("mysql")
 const cors = require("cors")
 
 app.use(cors({
-    origin: ['https://cr-sistema.vercel.app', 'http://localhost:3001'],
+    origin: ['https://cr-sistema.vercel.app', 'http://localhost:5173'],
     // Ajusta las opciones según sea necesario
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
