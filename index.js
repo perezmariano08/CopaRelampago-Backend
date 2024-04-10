@@ -48,116 +48,116 @@ app.get("/categorias", (req, res)=>{
     )
 })
 
-// app.post("/crear-torneo", (req, res)=>{
-//     const nombre = req.body.nombre
-//     const descripcion = req.body.descripcion
+app.post("/crear-torneo", (req, res)=>{
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion
 
-//     db.query(`INSERT INTO torneos(nombre, descripcion) VALUES ('${nombre}','${descripcion}')`,
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send("Torneo registrado con exito")
-//             }
-//         }
-//     )
-// })
+    db.query(`INSERT INTO torneos(nombre, descripcion) VALUES ('${nombre}','${descripcion}')`,
+        (err, result)=>{
+            if(err){
+                console.log(err);
+            } else {
+                res.send("Torneo registrado con exito")
+            }
+        }
+    )
+})
 
-// app.get("/torneos", (req, res)=>{
-//     db.query('SELECT * FROM torneos',
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send(result)
-//             }
-//         }
-//     )
-// })
+app.get("/torneos", (req, res)=>{
+    db.query('SELECT * FROM torneos',
+        (err, result)=>{
+            if(err){
+                console.log(err);
+            } else {
+                res.send(result)
+            }
+        }
+    )
+})
 
-// app.post("/crear-sede", (req, res)=>{
-//     const nombre = req.body.nombre
-//     const descripcion = req.body.descripcion
+ app.post("/crear-sede", (req, res)=>{
+     const nombre = req.body.nombre
+     const descripcion = req.body.descripcion
 
-//     db.query(`INSERT INTO sedes(nombre, descripcion) VALUES ('${nombre}','${descripcion}')`,
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send("Torneo registrado con exito")
-//             }
-//         }
-//     )
-// })
+     db.query(`INSERT INTO sedes(nombre, descripcion) VALUES ('${nombre}','${descripcion}')`,
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send("Torneo registrado con exito")
+             }
+         }
+     )
+ })
 
-// app.get("/sedes", (req, res)=>{
-//     db.query('SELECT * FROM sedes',
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send(result)
-//             }
-//         }
-//     )
-// })
+ app.get("/sedes", (req, res)=>{
+     db.query('SELECT * FROM sedes',
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send(result)
+             }
+         }
+     )
+ })
 
-// app.post("/crear-anio", (req, res)=>{
-//     const año = req.body.año
-//     const descripcion = req.body.descripcion
+ app.post("/crear-anio", (req, res)=>{
+     const año = req.body.año
+     const descripcion = req.body.descripcion
 
-//     db.query(`INSERT INTO años(año, descripcion) VALUES ('${año}','${descripcion}')`,
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send("Torneo registrado con exito")
-//             }
-//         }
-//     )
-// })
+     db.query(`INSERT INTO años(año, descripcion) VALUES ('${año}','${descripcion}')`,
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send("Torneo registrado con exito")
+             }
+         }
+     )
+ })
 
-// app.get("/anios", (req, res)=>{
-//     db.query('SELECT * FROM años ORDER BY año DESC',
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send(result)
-//             }
-//         }
-//     )
-// })
+ app.get("/anios", (req, res)=>{
+     db.query('SELECT * FROM años ORDER BY año DESC',
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send(result)
+             }
+         }
+     )
+ })
 
-// app.post("/crear-temporada", (req, res)=>{
-//     const año = req.body.año
-//     const sede = req.body.sede
-//     const categoria = req.body.categoria
-//     const torneo = req.body.torneo
-//     const descripcion = req.body.descripcion
+ app.post("/crear-temporada", (req, res)=>{
+     const año = req.body.año
+     const sede = req.body.sede
+     const categoria = req.body.categoria
+     const torneo = req.body.torneo
+     const descripcion = req.body.descripcion
 
-//     db.query(`INSERT INTO temporadas(id_torneo, id_categoria, id_año, id_sede, descripcion) VALUES ('${torneo}','${categoria}','${año}','${sede}','${descripcion}')`,
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send("Torneo registrado con exito")
-//             }
-//         }
-//     )
-// })
+     db.query(`INSERT INTO temporadas(id_torneo, id_categoria, id_año, id_sede, descripcion) VALUES ('${torneo}','${categoria}','${año}','${sede}','${descripcion}')`,
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send("Torneo registrado con exito")
+             }
+         }
+     )
+ })
 
-// app.get("/temporadas", (req, res)=>{
-//     db.query('SELECT id_temporada, torneos.nombre AS torneo, categorias.nombre AS categoria, años.año, sedes.nombre AS sede, temporadas.descripcion FROM Temporadas INNER JOIN Torneos ON Temporadas.id_torneo = Torneos.id_torneo INNER JOIN Categorias ON Temporadas.id_categoria = Categorias.id_categoria INNER JOIN Años ON Temporadas.id_año = Años.id_año INNER JOIN Sedes ON Temporadas.id_sede = Sedes.id_sede;',
-//         (err, result)=>{
-//             if(err){
-//                 console.log(err);
-//             } else {
-//                 res.send(result)
-//             }
-//         }
-//     )
-// })
+ app.get("/temporadas", (req, res)=>{
+     db.query('SELECT id_temporada, torneos.nombre AS torneo, categorias.nombre AS categoria, años.año, sedes.nombre AS sede, temporadas.descripcion FROM temporadas INNER JOIN torneos ON temporadas.id_torneo = torneos.id_torneo INNER JOIN categorias ON temporadas.id_categoria = categorias.id_categoria INNER JOIN años ON temporadas.id_año = años.id_año INNER JOIN sedes ON temporadas.id_sede = sedes.id_sede',
+         (err, result)=>{
+             if(err){
+                 console.log(err);
+             } else {
+                 res.send(result)
+             }
+         }
+     )
+ })
 
 
 app.listen(port, () => {
