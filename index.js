@@ -4,11 +4,12 @@ const mysql = require("mysql")
 const cors = require("cors")
 
 app.use(cors({
-    origin: 'https://cr-sistema.vercel.app',
+    origin: ['https://cr-sistema.vercel.app', 'http://localhost:3001'],
     // Ajusta las opciones según sea necesario
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(express.json())
 
 const port = process.env.PORT || 3001
