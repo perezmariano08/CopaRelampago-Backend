@@ -16,11 +16,11 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use("/categoria", categoriaRoutes);
-app.use("/torneo", torneoRoutes);
-app.use("/sede", sedeRoutes);
-app.use("/anio", anioRoutes);
-app.use("/temporada", temporadaRoutes);
+app.use("/api", categoriaRoutes);
+app.use("/api", torneoRoutes);
+app.use("/api", sedeRoutes);
+app.use("/api", anioRoutes);
+app.use("/api", temporadaRoutes);
 
 const port = process.env.PORT || 3001;
 
