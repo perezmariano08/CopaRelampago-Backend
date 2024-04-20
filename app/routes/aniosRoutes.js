@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const anioController = require("../controllers/anioController");
 
-router.post("/crear-anio", anioController.crearAnio);
+router.post("/api/crear-anio", anioController.crearAnio);
 
-router.get("/anios", anioController.obtenerAnios);
+router.get("/api/anios", anioController.obtenerAnios);
 
 module.exports = router;
