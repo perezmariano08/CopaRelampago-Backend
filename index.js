@@ -25,6 +25,6 @@ app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Corriendo en http://localhost:${port}`);
 });
